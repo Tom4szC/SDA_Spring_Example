@@ -1,6 +1,7 @@
 public class SingletonExample {
     Integer singletonInteger1;
     Integer singletonInteger2;
+    String message;
 
 
     public Integer getSingletonInteger1() {
@@ -25,5 +26,20 @@ public class SingletonExample {
 
     public void information2(){
         System.out.println(singletonInteger2);
+    }
+    
+    public void init(){
+        System.out.println("Bean init...");
+    }
+    
+    public void destroy(){
+        System.out.println("Bean destroy...");
+    }
+
+    public void setMessage(String message) {
+    }
+
+    public void printMessage(){
+        System.out.println(message);
     }
 }

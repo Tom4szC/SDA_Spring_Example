@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
        default-init-method="init"
        default-destroy-method="destroy">
     <bean id="helloWorld" class="HelloWorld" scope="prototype">
@@ -14,6 +14,25 @@
         <property name="integer2" value="8"/>
     </bean>
 
-    <bean id="singletonExample" class="SingletonExample" scope="singleton">
+    <bean id="singletonExample" class="SingletonExample" scope="singleton" init-method="init" destroy-method="destroy">
+        <property name="message" value="dupa"></property>
     </bean>
+
+    <bean id="beanTemplate" abstract="true">
+        <property name="message1" value="Hello World Template 1"/>
+        <property name="message2" value="Hello World Template 2"/>
+        <property name="message3" value="Hello World Template 3"/>
+    </bean>
+
+    <bean id="beanUsingTemplate" class="BeanTemplateExample" parent="beanTemplate">
+        <property name="message1" value="My own message 1"/>
+        <property name="message3" value="My own message 3"/>
+    </bean>
+
+    <bean id="computer" class="Computer" scope="prototype">
+        <property name="hardDrive">
+            <bean id="hardDrive" class="HardDrive"/>
+        </property>
+    </bean>
+
 </beans>

@@ -24,6 +24,18 @@ public class SimpleHelloWorld {
         SingletonExample obj5 = (SingletonExample) context.getBean("singletonExample");
         obj5.information1();
         obj5.information2();
+        obj5.printMessage();
+
+        BeanTemplateExample obj6 = (BeanTemplateExample) context.getBean("beanUsingTemplate");
+        obj6.printMessage1();
+        obj6.printMessage2();
+        obj6.printMessage3();
+
+        Computer obj7 = (Computer) context.getBean("computer") ;
+        System.out.println(obj7.getHardDrive().getManufacturer());
+
+        ((ClassPathXmlApplicationContext) context).close();
+
 
     }
 }
