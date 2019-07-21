@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
+    <bean id="helloWorld" class="HelloWorld" scope="prototype">
+        <property name="message" value="ABC!"/>
+        <property name="message2" value="ABC2!"/>
+    </bean>
+
+    <bean id="simpleInt" class="SimpleIntClass" scope="prototype">
+        <property name="integer1" value="5"/>
+        <property name="integer2" value="8"/>
+    </bean>
+</beans>
