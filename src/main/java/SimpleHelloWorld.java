@@ -14,5 +14,16 @@ public class SimpleHelloWorld {
         SimpleIntClass obj3 = (SimpleIntClass) context.getBean("simpleInt");
         obj3.add();
 
+        SingletonExample obj4 = (SingletonExample) context.getBean("singletonExample");
+        obj4.setSingletonInteger1(5);
+        obj4.setSingletonInteger2(10);
+
+        obj4.information1();
+        obj4.information2();
+
+        SingletonExample obj5 = (SingletonExample) context.getBean("singletonExample");
+        obj5.information1();
+        obj5.information2();
+
     }
 }

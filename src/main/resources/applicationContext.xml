@@ -13,4 +13,7 @@
         <property name="integer1" value="5"/>
         <property name="integer2" value="8"/>
     </bean>
+
+    <bean id="singletonExample" class="SingletonExample" scope="singleton">
+    </bean>
 </beans>
