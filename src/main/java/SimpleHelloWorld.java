@@ -34,6 +34,9 @@ public class SimpleHelloWorld {
         Computer obj7 = (Computer) context.getBean("computer") ;
         System.out.println(obj7.getHardDrive().getManufacturer());
 
+        Car car = (Car) context.getBean("car");
+        System.out.println(car.getEngine().getPower());
+
         ((ClassPathXmlApplicationContext) context).close();
 
 

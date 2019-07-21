@@ -35,4 +35,12 @@
         </property>
     </bean>
 
+    <bean id="car" class="Car">
+        <constructor-arg index="0" ref="engine"/>
+    </bean>
+
+    <bean id="engine" class="Engine">
+
+    </bean>
+
 </beans>
