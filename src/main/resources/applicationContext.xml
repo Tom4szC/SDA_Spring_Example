@@ -43,4 +43,33 @@
 
     </bean>
 
+    <bean id="collections" class="Collections">
+        <property name="addressList">
+            <list>
+                <value>Poland</value>
+                <value>France</value>
+                <value>France</value>
+                <value>United Kingdom</value>
+            </list>
+        </property>
+
+        <property name="addressSet">
+            <set>
+                <value>Poland</value>
+                <value>France</value>
+                <value>France</value>
+                <value>United Kingdom</value>
+            </set>
+        </property>
+
+        <property name="addressMap">
+            <map>
+                <entry key="1" value="Poland" />
+                <entry key="2" value="France" />
+                <entry key="3" value="United Kingdom" />
+            </map>
+        </property>
+
+    </bean>
+
 </beans>
