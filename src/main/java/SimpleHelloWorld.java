@@ -1,9 +1,10 @@
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SimpleHelloWorld {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 //        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
 //        obj.setMessage("first object");
 //        obj.getMessage();
@@ -36,25 +37,28 @@ public class SimpleHelloWorld {
 
 //        Car car = (Car) context.getBean("car");
 //        System.out.println(car.getEngine().getPower());
-
-        Collections collections = (Collections) context.getBean("collections");
-        collections
-                .getAddressList()
-                .forEach(System.out::println);
-        System.out.println();
-
-        collections
-                .getAddressSet()
-                .forEach(x -> System.out.println(x));
-        System.out.println();
-
-        collections.getAddressMap().forEach((k, v) -> System.out.println((k + ":" + v)));
-
-
-        PersonBean personBean = context.getBean(PersonBean.class);
-        personBean.setName("Any random name");
-        System.out.println(personBean.getName());
-
-        ((ClassPathXmlApplicationContext) context).close();
+//
+//        Collections collections = (Collections) context.getBean("collections");
+//        collections
+//                .getAddressList()
+//                .forEach(System.out::println);
+//        System.out.println();
+//
+//        collections
+//                .getAddressSet()
+//                .forEach(x -> System.out.println(x));
+//        System.out.println();
+//
+//        collections.getAddressMap().forEach((k, v) -> System.out.println((k + ":" + v)));
+//
+//
+//
+//
+//        ((ClassPathXmlApplicationContext) context).close();
+        ApplicationContext context = new AnnotationConfigApplicationContext(Configuration.class);
+        ((AnnotationConfigApplicationContext) context).start();
+        //((AnnotationConfigApplicationContext) context).refresh();
+        ((AnnotationConfigApplicationContext) context).stop();
     }
-}
+
+    }

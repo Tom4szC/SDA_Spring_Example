@@ -8,6 +8,19 @@ public class Configuration {
         return new PersonBean();
     }
 
+@Bean
+    public CStartEventHandler cStartEventHandler(){
+        return new CStartEventHandler();
+}
 
+@Bean
+    public CStopEventHandler cStopEventHandler(){
+        return new CStopEventHandler();
+}
+
+@Bean
+    public CRefreshEventHandler cRefreshEventHandler(){
+        return new CRefreshEventHandler();
+}
 
 }
